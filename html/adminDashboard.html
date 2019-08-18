@@ -3,11 +3,12 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Event Table</title>
+    <title>Admin Dashboard</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../css/registerEvent.css">
     <link rel="stylesheet" type="text/css" href="../css/menubar.css">
-    <link rel="stylesheet" type="text/css" href="../css/eventTable.css">
     <script src="https://www.gstatic.com/firebasejs/6.4.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.4.0/firebase-database.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/firebasejs/6.4.0/firebase-auth.js"></script>
     <script type="text/javascript" src="../js/common.js"></script>
 
@@ -29,7 +30,7 @@
         <img src="../images/dialogLogo.png" width="144px" height="162px">
 
         <ul>
-            <li><a href="dashboard.html"><i class="fas fa-home menuIcons"></i> Dashboard</a></li>
+            <li><a href="adminDashboard.html"><i class="fas fa-home menuIcons"></i> Dashboard</a></li>
             <li><a href="eventTable.html"><i class="fas fa-calendar-week menuIcons"></i> Events</a></li>
             <li><a href="admin.html"><i class="fas fa-user-tie menuIcons"></i> Admin</a></li>
             <li><a href="organizer.html"><i class="fas fa-users-cog menuIcons"></i> Organizers</a></li>
@@ -45,44 +46,17 @@
             <nav><i class="fas fa-search" id="searchIcon"></i></nav>
             <input type="text" name="search" id="search">
             <button id="logOut" onclick="signOutUser()">
-        	Sign Out
+          Sign Out
         </button>
         </header>
         <nav>
-            <h1 id="title">
-                <center>Events</center>
+            <h1 id="title" class="alert alert-info">
+                <center> Admin Dashboard</center>
             </h1>
         </nav>
-        <button type="button" name="addEvent" id="addEvent">
-          <a href="registerEvent.html">Add Event</a>
-        </button>
-        <br>
-        <table>
-            <tr>
-                <th>Title</th>
-                <th>Photo</th>
-                <th>Date</th>
-                <th>Start Time</th>
-                <th>End time</th>
-                <th>Location</th>
-                <th>No of Guests</th>
-                <th>Descritption</th>
-                <th>Edit</th>
-            </tr>
-            <tr>
-                <td>Google I/O</td>
-                <td><img src="../images/google.png" width="150" height="50"></td>
-                <td>2019/11/15</td>
-                <td>14:00</td>
-                <td>17:00</td>
-                <td>Dialog</td>
-                <td>102</td>
-                <td>Google shows their future technologies</td>
-                <td><img src="../images/edit.png" width="25" height="25">
-                    <img src="../images/delete.png" width="25" height="25"></td>
-            </tr>
-        </table>
+
     </div>
+    </section>
 </body>
 
 </html>

@@ -1,0 +1,326 @@
+[1mdiff --git a/html/Ezcash Food Payment.html b/html/Ezcash Food Payment.html[m
+[1mindex 8521cf5..2e21e31 100644[m
+[1m--- a/html/Ezcash Food Payment.html[m	
+[1m+++ b/html/Ezcash Food Payment.html[m	
+[36m@@ -2,175 +2,171 @@[m
+ <html lang="en" dir="ltr">[m
+ [m
+ <head>[m
+[31m-  <meta charset="utf-8">[m
+[31m-  <!-- remove below line before deploying[m
+[32m+[m[32m    <meta charset="utf-8">[m
+[32m+[m[32m    <!-- remove below line before deploying[m
+     <meta http-equiv="refresh" content="3" > -->[m
+[31m-  <title>Ezcash Food Payment </title>[m
+[31m-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"[m
+[31m-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">[m
+[31m-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"[m
+[31m-    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">[m
+[31m-  <link rel="stylesheet" type="text/css" href="../css/menubarEzCash.css">[m
+[31m-  <link rel="stylesheet" type="text/css" href="../css/EzcashFoodPayment.css">[m
+[32m+[m[32m    <title>Ezcash Food Payment </title>[m
+[32m+[m[32m    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">[m
+[32m+[m[32m    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">[m
+[32m+[m[32m    <link rel="stylesheet" type="text/css" href="../css/menubarEzCash.css">[m
+[32m+[m[32m    <link rel="stylesheet" type="text/css" href="../css/EzcashFoodPayment.css">[m
+ [m
+ [m
+ </head>[m
+ [m
+ <body>[m
+[31m-  <div id="menubar">[m
+[31m-    <div id="menubar_top">[m
+[31m-      <div id="logo"> <img src="../images/dialogLogo.png" width="144px" height="162px"></div>[m
+[31m-      <div id="admindetails_div">[m
+[31m-        <label id="label_adminName">Nisuga Jayawardana</label>[m
+[31m-        <label id="label_admin">Admin</label>[m
+[31m-      </div>[m
+[31m-    </div>[m
+[31m-[m
+[31m-    <div id="menulist">[m
+[31m-      <ul>[m
+[31m-        <li><a href="dashboard.html"><i class="fas fa-home menuIcons"></i> Dashboard</a></li>[m
+[31m-        <li><a href="eventTable.html"><i class="fas fa-calendar-week menuIcons"></i> Events</a></li>[m
+[31m-        <li><a href="admin.html"><i class="fas fa-user-tie menuIcons"></i> Admin</a></li>[m
+[31m-        <li><a href="organizer.html"><i class="fas fa-users-cog menuIcons"></i> Organizers</a></li>[m
+[31m-        <li><a href="member.html"><i class="fas fa-users menuIcons"></i> Members</a></li>[m
+[31m-        <li><a href="eventExpenses.html"><i class="fas fa-money-bill-wave-alt menuIcons"></i> Event Expenses</a></li>[m
+[31m-        <li><a href="Ezcash Food Payment.html"><i class="fas fa-utensils menuIcons"></i>Ezcash Food Payment </a></li>[m
+[31m-        <li><a href="report.html"><i class="fas fa-file-alt menuIcons"></i> Reports</a></li>[m
+[31m-        <li><a href="calander.html"><i class="far fa-calendar-alt menuIcons"></i> Event Agenda</a></li>[m
+[31m-      </ul>[m
+[32m+[m[32m    <div id="menubar">[m
+[32m+[m[32m        <div id="menubar_top">[m
+[32m+[m[32m            <div id="logo"> <img src="../images/dialogLogo.png" width="144px" height="162px"></div>[m
+[32m+[m[32m            <div id="admindetails_div">[m
+[32m+[m[32m                <label id="label_adminName">Nisuga Jayawardana</label>[m
+[32m+[m[32m                <label id="label_admin">Admin</label>[m
+[32m+[m[32m            </div>[m
+[32m+[m[32m        </div>[m
+[32m+[m[32m        <div id="menulist">[m
+[32m+[m[32m            <ul>[m
+[32m+[m[32m                <li><a href="dashboard.html"><i class="fas fa-home menuIcons"></i> Dashboard</a></li>[m
+[32m+[m[32m                <li><a href="eventTable.html"><i class="fas fa-calendar-week menuIcons"></i> Events</a></li>[m
+[32m+[m[32m                <li><a href="admin.html"><i class="fas fa-user-tie menuIcons"></i> Admin</a></li>[m
+[32m+[m[32m                <li><a href="organizer.html"><i class="fas fa-users-cog menuIcons"></i> Organizers</a></li>[m
+[32m+[m[32m                <li><a href="member.html"><i class="fas fa-users menuIcons"></i> Members</a></li>[m
+[32m+[m[32m                <li><a href="eventExpenses.html"><i class="fas fa-money-bill-wave-alt menuIcons"></i> Event Expenses</a></li>[m
+[32m+[m[32m                <li><a href="Ezcash Food Payment.html"><i class="fas fa-utensils menuIcons"></i>Ezcash Food Payment </a></li>[m
+[32m+[m[32m                <li><a href="report.html"><i class="fas fa-file-alt menuIcons"></i> Reports</a></li>[m
+[32m+[m[32m                <li><a href="calander.html"><i class="far fa-calendar-alt menuIcons"></i> Event Agenda</a></li>[m
+[32m+[m[32m            </ul>[m
+[32m+[m[32m        </div>[m
+     </div>[m
+[31m-  </div>[m
+[31m-  <div id="actions">[m
+[31m-    <div id="header">[m
+[31m-      <label hidden>as</label>[m
+[31m-      <button id="logOut">[m
+[32m+[m[32m    <div id="actions">[m
+[32m+[m[32m        <div id="header">[m
+[32m+[m[32m            <label hidden>as</label>[m
+[32m+[m[32m            <button id="logOut">[m
+         Sign Out[m
+       </button>[m
+[31m-    </div>[m
+[31m-    <div id="div_pageInfo">[m
+[31m-      <nav>[m
+[31m-        <h1 id="title">Pay Ezcash for Food  </h1>[m
+[31m-      </nav>[m
+[31m-      <button type="button" name="View Previous Food Payments" id="addEvent">[m
+[32m+[m[32m        </div>[m
+[32m+[m[32m        <div id="div_pageInfo">[m
+[32m+[m[32m            <nav>[m
+[32m+[m[32m                <h1 id="title">Pay Ezcash for Food </h1>[m
+[32m+[m[32m            </nav>[m
+[32m+[m[32m            <button type="button" name="View Previous Food Payments" id="addEvent">[m
+         <a href="PreviousFoodPayments.html">View Previous Food Payments</a>[m
+       </button>[m
+[31m-    </div>[m
+[32m+[m[32m        </div>[m
+ [m
+[31m-    <div id="container">[m
+[32m+[m[32m        <div id="container">[m
+ [m
+[31m-      <div id="wrapper">[m
+[31m-        <div id="content">[m
+[31m-          <div class="dropdown">[m
+[31m-            <select class="form-control form-control-me" style="background-color: #d1ecf1">[m
+[32m+[m[32m            <div id="wrapper">[m
+[32m+[m[32m                <div id="content">[m
+[32m+[m[32m                    <div class="dropdown">[m
+[32m+[m[32m                        <select class="form-control form-control-me" style="background-color: #d1ecf1">[m
+               <option selected disabled>Select an ongoing Training </option>[m
+               <option>IOT Training for 5G devices - Millenium iT </option>[m
+             </select>[m
+ [m
+[31m-          </div><br>[m
+[31m-          <div id="amount">[m
+[31m-            <label id="label_enter_amount" class="alert alert-info">Specify amount for a member </label>[m
+[31m-            <input type="text" id="input_amount" class="form-control" />[m
+[31m-          </div>[m
+[31m-          <table>[m
+[31m-            <tr id="header_row">[m
+[31m-              <th>Member Name</th>[m
+[31m-              <th>Phone Number</th>[m
+[31m-              <th>eZ Cash Status</th>[m
+[31m-              <th>Select / Unselect</th>[m
+[31m-            </tr>[m
+[31m-            <tr>[m
+[31m-              <td>Dianara Perera</td>[m
+[31m-              <td>0784885454</td>[m
+[31m-              <td>enabled</td>[m
+[31m-              <td>[m
+[31m-                <input type="checkbox">[m
+[31m-              </td>[m
+[31m-              <td><img src="../images/edit.png" width="25" height="25">[m
+[31m-                <img src="../images/delete.png" width="25" height="25"></td>[m
+[31m-            </tr>[m
+[31m-            <tr>[m
+[31m-              <td>Dianara Perera</td>[m
+[31m-              <td>0784885454</td>[m
+[31m-              <td>enabled</td>[m
+[31m-              <td>[m
+[31m-                <input type="checkbox">[m
+[31m-              </td>[m
+[31m-              <td><img src="../images/edit.png" width="25" height="25">[m
+[31m-                <img src="../images/delete.png" width="25" height="25"></td>[m
+[31m-            </tr>[m
+[31m-            <tr>[m
+[31m-              <td>Dianara Perera</td>[m
+[31m-              <td>0784885454</td>[m
+[31m-              <td>enabled</td>[m
+[31m-              <td>[m
+[31m-                <input type="checkbox">[m
+[31m-              </td>[m
+[31m-              <td><img src="../images/edit.png" width="25" height="25">[m
+[31m-                <img src="../images/delete.png" width="25" height="25"></td>[m
+[31m-            </tr>[m
+[31m-            <tr>[m
+[31m-              <td>Dianara Perera</td>[m
+[31m-              <td>0784885454</td>[m
+[31m-              <td>enabled</td>[m
+[31m-              <td>[m
+[31m-                <input type="checkbox">[m
+[31m-              </td>[m
+[31m-              <td><img src="../images/edit.png" width="25" height="25">[m
+[31m-                <img src="../images/delete.png" width="25" height="25"></td>[m
+[31m-            </tr>[m
+[31m-            <tr>[m
+[31m-              <td>Dianara Perera</td>[m
+[31m-              <td>0784885454</td>[m
+[31m-              <td>enabled</td>[m
+[31m-              <td>[m
+[31m-                <input type="checkbox">[m
+[31m-              </td>[m
+[31m-              <td><img src="../images/edit.png" width="25" height="25">[m
+[31m-                <img src="../images/delete.png" width="25" height="25"></td>[m
+[31m-            </tr>[m
+[31m-          </table>[m
+[32m+[m[32m                    </div><br>[m
+[32m+[m[32m                    <div id="amount">[m
+[32m+[m[32m                        <label id="label_enter_amount" class="alert alert-info">Specify amount for a member </label>[m
+[32m+[m[32m                        <input type="text" id="input_amount" class="form-control" />[m
+[32m+[m[32m                    </div>[m
+[32m+[m[32m                    <table>[m
+[32m+[m[32m                        <tr id="header_row">[m
+[32m+[m[32m                            <th>Member Name</th>[m
+[32m+[m[32m                            <th>Phone Number</th>[m
+[32m+[m[32m                            <th>eZ Cash Status</th>[m
+[32m+[m[32m                            <th>Select / Unselect</th>[m
+[32m+[m[32m                        </tr>[m
+[32m+[m[32m                        <tr>[m
+[32m+[m[32m                            <td>Dianara Perera</td>[m
+[32m+[m[32m                            <td>0784885454</td>[m
+[32m+[m[32m                            <td>enabled</td>[m
+[32m+[m[32m                            <td>[m
+[32m+[m[32m                                <input type="checkbox">[m
+[32m+[m[32m                            </td>[m
+[32m+[m[32m                            <td><img src="../images/edit.png" width="25" height="25">[m
+[32m+[m[32m                                <img src="../images/delete.png" width="25" height="25"></td>[m
+[32m+[m[32m                        </tr>[m
+[32m+[m[32m                        <tr>[m
+[32m+[m[32m                            <td>Dianara Perera</td>[m
+[32m+[m[32m                            <td>0784885454</td>[m
+[32m+[m[32m                            <td>enabled</td>[m
+[32m+[m[32m                            <td>[m
+[32m+[m[32m                                <input type="checkbox">[m
+[32m+[m[32m                            </td>[m
+[32m+[m[32m                            <td><img src="../images/edit.png" width="25" height="25">[m
+[32m+[m[32m                                <img src="../images/delete.png" width="25" height="25"></td>[m
+[32m+[m[32m                        </tr>[m
+[32m+[m[32m                        <tr>[m
+[32m+[m[32m                            <td>Dianara Perera</td>[m
+[32m+[m[32m                            <td>0784885454</td>[m
+[32m+[m[32m                            <td>enabled</td>[m
+[32m+[m[32m                            <td>[m
+[32m+[m[32m                                <input type="checkbox">[m
+[32m+[m[32m                            </td>[m
+[32m+[m[32m                            <td><img src="../images/edit.png" width="25" height="25">[m
+[32m+[m[32m                                <img src="../images/delete.png" width="25" height="25"></td>[m
+[32m+[m[32m                        </tr>[m
+[32m+[m[32m                        <tr>[m
+[32m+[m[32m                            <td>Dianara Perera</td>[m
+[32m+[m[32m                            <td>0784885454</td>[m
+[32m+[m[32m                            <td>enabled</td>[m
+[32m+[m[32m                            <td>[m
+[32m+[m[32m                                <input type="checkbox">[m
+[32m+[m[32m                            </td>[m
+[32m+[m[32m                            <td><img src="../images/edit.png" width="25" height="25">[m
+[32m+[m[32m                                <img src="../images/delete.png" width="25" height="25"></td>[m
+[32m+[m[32m                        </tr>[m
+[32m+[m[32m                        <tr>[m
+[32m+[m[32m                            <td>Dianara Perera</td>[m
+[32m+[m[32m                            <td>0784885454</td>[m
+[32m+[m[32m                            <td>enabled</td>[m
+[32m+[m[32m                            <td>[m
+[32m+[m[32m                                <input type="checkbox">[m
+[32m+[m[32m                            </td>[m
+[32m+[m[32m                            <td><img src="../images/edit.png" width="25" height="25">[m
+[32m+[m[32m                                <img src="../images/delete.png" width="25" height="25"></td>[m
+[32m+[m[32m                        </tr>[m
+[32m+[m[32m                    </table>[m
+[32m+[m[32m                </div>[m
+[32m+[m[32m            </div>[m
+[32m+[m[32m            <div id="navigation">[m
+[32m+[m[32m                <label id="label_autopayment" class="alert alert-info">Auto Payment</label>[m
+[32m+[m
+[32m+[m[32m                <div id="autopay_switch" class="switch">[m
+[32m+[m[32m                    <input id="cmn-toggle-1" class="cmn-toggle cmn-toggle-round" type="checkbox">[m
+[32m+[m[32m                    <label for="cmn-toggle-1"></label>[m
+[32m+[m[32m                </div> <br><br><br>[m
+[32m+[m[32m                <p id="autopayment_desc">[m
+[32m+[m[32m                    Pay after[m
+[32m+[m[32m                    <div id="div_autopayment_init_hours"><input id="autopayment_init_hours" type="number" max="12" min="1" class="form-control" /></div>[m
+[32m+[m[32m                    <p id="lastdesc_autopay"> from the event start.</p><br><br>[m
+[32m+[m[32m                    <p id="last_last_desc_autopay"> when verified participant count is atleast</p> <input id="autopayment_init_count" type="number" max="50" min="1" class="form-control" />[m
+[32m+[m[32m                </p>[m
+[32m+[m
+[32m+[m[32m                <input id="save_autopay_configs" type="submit" value="Save" class="btn btn-secondary">[m
+[32m+[m[32m            </div>[m
+[32m+[m[32m            <div id="extra">[m
+[32m+[m[32m                <img id="ezcash_img" src="../images/ezcash.jpg" height="100" width="100"><br>[m
+[32m+[m[32m                <label class="alert alert-info"><b>Account Number :</b></label>[m
+[32m+[m[32m                <label class="alert alert-light"> 256656580665</label><br>[m
+[32m+[m[32m                <label class="alert alert-info"><b>Account Balance :</b></label>[m
+[32m+[m[32m                <label class="alert alert-light">Rs. 25000.00</label>[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m[32m            </div>[m
+         </div>[m
+[31m-      </div>[m
+[31m-      <div id="navigation">[m
+[31m-        <label id="label_autopayment" class="alert alert-info">Auto Payment</label>[m
+[31m-[m
+[31m-        <div id="autopay_switch" class="switch">[m
+[31m-          <input id="cmn-toggle-1" class="cmn-toggle cmn-toggle-round" type="checkbox">[m
+[31m-          <label for="cmn-toggle-1"></label>[m
+[31m-        </div> <br><br><br>[m
+[31m-        <p id="autopayment_desc">[m
+[31m-          Pay after <div id="div_autopayment_init_hours"><input id="autopayment_init_hours" type="number" max="12"[m
+[31m-              min="1" class="form-control" /></div>[m
+[31m-          <p id="lastdesc_autopay"> from the event start.</p><br><br>[m
+[31m-          <p id="last_last_desc_autopay"> when verified participant count is atleast</p> <input[m
+[31m-            id="autopayment_init_count" type="number" max="50" min="1" class="form-control" />[m
+[31m-        </p>[m
+[31m-[m
+[31m-        <input id="save_autopay_configs" type="submit" value="Save" class="btn btn-secondary">[m
+[31m-      </div>[m
+[31m-      <div id="extra">[m
+[31m-          <img id="ezcash_img" src="../images/ezcash.jpg" height="100" width="100"><br>[m
+[31m-        <label  class="alert alert-info"><b>Account Number :</b></label>[m
+[31m-        <label  class="alert alert-light" > 256656580665</label><br>[m
+[31m-        <label  class="alert alert-info"><b>Account Balance :</b></label>[m
+[31m-        <label  class="alert alert-light" >Rs. 25000.00</label>[m
+[31m-[m
+[31m-   [m
+[31m-        [m
+[31m-[m
+[31m-      </div>[m
+[31m-      </div>[m
+[31m-       <div id="footer">[m
+[31m-          <button id="paynow" type="submit" class="btn btn-primary btn-lg btn-block">Pay Now</button>[m
+[31m-        <button id="cancel" type="reset" class="btn btn-secondary btn-lg btn-block">Cancel</button>[m
+[31m-[m
+[31m-  </div>[m
+[31m-    </div>[m
+[31m- [m
+[31m-  </div>[m
+[32m+[m[32m        <div id="footer">[m
+[32m+[m[32m            <button id="paynow" type="submit" class="btn btn-primary btn-lg btn-block">Pay Now</button>[m
+[32m+[m[32m            <button id="cancel" type="reset" class="btn btn-secondary btn-lg btn-block">Cancel</button>[m
+ [m
+[32m+[m[32m        </div>[m
+[32m+[m[32m    </div>[m
+ [m
+[31m-  </div>[m
+[32m+[m[32m    <script>[m
+[32m+[m[32m        var database = firebase.database();[m
+[32m+[m[32m        var ongoingTrainingsRef = database.ref('events').child().orderByChild('date').equalTo();[m
+[32m+[m[32m    </script>[m
+ </body>[m
+ [m
+ </html>[m
+\ No newline at end of file[m

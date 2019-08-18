@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Ezcash Food Payment </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../css/menubarEzCash.css">
+    <link rel="stylesheet" type="text/css" href="../css/EzcashFoodPayment.css">
+    <script src="https://www.gstatic.com/firebasejs/6.4.0/firebase-app.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/6.4.0/firebase-auth.js"></script>
+    <script type="text/javascript" src="../js/common.js"></script>
+
+    <script type="text/javascript">
+        window.onload = function() {
+            initializeFirebaseProject();
+            if (!isUserAnAdmin()) {
+                alert("You are unorthorized for this content");
+                window.location.href = "Login.html";
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <div id="menubar">
+        <div id="menubar_top">
+            <div id="logo"> <img src="../images/dialogLogo.png" width="144px" height="162px"></div>
+            <div id="admindetails_div">
+                <label id="label_adminName">Nisuga Jayawardana</label>
+                <label id="label_admin">Admin</label>
+            </div>
+        </div>
+        <div id="menulist">
+            <ul>
+                <li><a href="dashboard.html"><i class="fas fa-home menuIcons"></i> Dashboard</a></li>
+                <li><a href="eventTable.html"><i class="fas fa-calendar-week menuIcons"></i> Events</a></li>
+                <li><a href="admin.html"><i class="fas fa-user-tie menuIcons"></i> Admin</a></li>
+                <li><a href="organizer.html"><i class="fas fa-users-cog menuIcons"></i> Organizers</a></li>
+                <li><a href="member.html"><i class="fas fa-users menuIcons"></i> Members</a></li>
+                <li><a href="eventExpenses.html"><i class="fas fa-money-bill-wave-alt menuIcons"></i> Event Expenses</a></li>
+                <li><a href="EzcashFoodPayment.html"><i class="fas fa-utensils menuIcons"></i>Ezcash Food Payment </a></li>
+                <li><a href="report.html"><i class="fas fa-file-alt menuIcons"></i> Reports</a></li>
+                <li><a href="calander.html"><i class="far fa-calendar-alt menuIcons"></i> Event Agenda</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="actions">
+        <div id="header">
+            <label hidden>as</label>
+            <button id="logOut" onclick="signOutUser()">
+        Sign Out
+      </button>
+        </div>
+        <div id="div_pageInfo">
+            <nav>
+                <h1 id="title">Pay Ezcash for Food </h1>
+            </nav>
+            <button type="button" name="View Previous Food Payments" id="addEvent">
+        <a href="PreviousFoodPayments.html">View Previous Food Payments</a>
+      </button>
+        </div>
+
+        <div id="container">
+
+            <div id="wrapper">
+                <div id="content">
+                    <div class="dropdown">
+                        <select class="form-control form-control-me" style="background-color: #d1ecf1">
+              <option selected disabled>Select an ongoing Training </option>
+              <option>IOT Training for 5G devices - Millenium iT </option>
+            </select>
+
+                    </div><br>
+                    <div id="amount">
+                        <label id="label_enter_amount" class="alert alert-info">Specify amount for a member </label>
+                        <input type="text" id="input_amount" class="form-control" />
+                    </div>
+                    <table>
+                        <tr id="header_row">
+                            <th>Member Name</th>
+                            <th>Phone Number</th>
+                            <th>eZ Cash Status</th>
+                            <th>Select / Unselect</th>
+                        </tr>
+                        <tr>
+                            <td>Dianara Perera</td>
+                            <td>0784885454</td>
+                            <td>enabled</td>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                            <td><img src="../images/edit.png" width="25" height="25">
+                                <img src="../images/delete.png" width="25" height="25"></td>
+                        </tr>
+                        <tr>
+                            <td>Dianara Perera</td>
+                            <td>0784885454</td>
+                            <td>enabled</td>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                            <td><img src="../images/edit.png" width="25" height="25">
+                                <img src="../images/delete.png" width="25" height="25"></td>
+                        </tr>
+                        <tr>
+                            <td>Dianara Perera</td>
+                            <td>0784885454</td>
+                            <td>enabled</td>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                            <td><img src="../images/edit.png" width="25" height="25">
+                                <img src="../images/delete.png" width="25" height="25"></td>
+                        </tr>
+                        <tr>
+                            <td>Dianara Perera</td>
+                            <td>0784885454</td>
+                            <td>enabled</td>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                            <td><img src="../images/edit.png" width="25" height="25">
+                                <img src="../images/delete.png" width="25" height="25"></td>
+                        </tr>
+                        <tr>
+                            <td>Dianara Perera</td>
+                            <td>0784885454</td>
+                            <td>enabled</td>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                            <td><img src="../images/edit.png" width="25" height="25">
+                                <img src="../images/delete.png" width="25" height="25"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div id="navigation">
+                <label id="label_autopayment" class="alert alert-info">Auto Payment</label>
+
+                <div id="autopay_switch" class="switch">
+                    <input id="cmn-toggle-1" class="cmn-toggle cmn-toggle-round" type="checkbox">
+                    <label for="cmn-toggle-1"></label>
+                </div> <br><br><br>
+                <p id="autopayment_desc">
+                    Pay after
+                    <div id="div_autopayment_init_hours"><input id="autopayment_init_hours" type="number" max="12" min="1" class="form-control" /></div>
+                    <p id="lastdesc_autopay"> from the event start.</p><br><br>
+                    <p id="last_last_desc_autopay"> when verified participant count is atleast</p> <input id="autopayment_init_count" type="number" max="50" min="1" class="form-control" />
+                </p>
+
+                <input id="save_autopay_configs" type="submit" value="Save" class="btn btn-secondary">
+            </div>
+            <div id="extra">
+                <img id="ezcash_img" src="../images/ezcash.jpg" height="100" width="100"><br>
+                <label class="alert alert-info"><b>Account Number :</b></label>
+                <label class="alert alert-light"> 256656580665</label><br>
+                <label class="alert alert-info"><b>Account Balance :</b></label>
+                <label class="alert alert-light">Rs. 25000.00</label>
+            </div>
+        </div>
+        <div id="footer">
+            <button id="paynow" type="submit" class="btn btn-primary btn-lg btn-block">Pay Now</button>
+            <button id="cancel" type="reset" class="btn btn-secondary btn-lg btn-block">Cancel</button>
+
+        </div>
+    </div>
+
+    <script>
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Index</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../css/Login.css">
+
+    <script type="text/javascript">
+        window.onload = function() {
+            sessionStorage.setItem("userkey", "user");
+            sessionStorage.setItem("adminKey", "admin");
+            sessionStorage.setItem("organizerKey", "org");
+            window.location = "/ITP_DialogEventManager_WebApp/html/Login.html";
+        }
+    </script>
+</head>
+
+<body>
+    <h2>
+        <marquee>This is Index</marquee>
+    </h2>
+    <div style="font-size: 50px;text-align: center; margin-top:400px;">
+        <h1 style="align-content: center"><b>ITP_DialogEventManager_WebApp</b></h1>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            //Preloader
+            $(window).on("load", function() {
+                preloaderFadeOutTime = 1000;
+
+                function hidePreloader() {
+                    var preloader = $('.spinner-wrapper');
+                    preloader.fadeOut(preloaderFadeOutTime);
+                }
+                hidePreloader();
+            });
+        });
+    </script>
+</body>
+<!--CSS Spinner-->
+<div class="spinner-wrapper">
+    <div class="spinner"></div>
+</div>
+
+</html>
