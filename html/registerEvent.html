@@ -1,62 +1,82 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title>Add an event</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../css/registerEvent.css">
     <link rel="stylesheet" type="text/css" href="../css/menubar.css">
-  </head>
-  <body>
-      <div id="menubar">
+    <script src="https://www.gstatic.com/firebasejs/6.4.0/firebase-app.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/6.4.0/firebase-auth.js"></script>
+    <script type="text/javascript" src="../js/common.js"></script>
 
-    <span id="dialog">Dialog Events <br> Admin Panel</span><br>
-    <img src="../images/dialogLogo.png" width="144px" height="162px">
+    <script type="text/javascript">
+        window.onload = function() {
+            initializeFirebaseProject();
+            if (!isUserAnAdmin()) {
+                alert("You are unorthorized for this content");
+                window.location.href = "Login.html";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="menubar">
+
+        <span id="dialog">Dialog Events <br> Admin Panel</span><br>
+        <img src="../images/dialogLogo.png" width="144px" height="162px">
 
         <ul>
-          <li><a href = "dashboard.html"><i class="fas fa-home menuIcons"></i> Dashboard</a></li>
-          <li><a href = "eventTable.html"><i class="fas fa-calendar-week menuIcons"></i> Events</a></li>
-          <li><a href = "admin.html"><i class="fas fa-user-tie menuIcons"></i> Admin</a></li>
-          <li><a href = "organizer.html"><i class="fas fa-users-cog menuIcons"></i> Organizers</a></li>
-          <li><a href = "member.html"><i class="fas fa-users menuIcons"></i> Members</a></li>
-          <li><a href = "eventExpenses.html"><i class="fas fa-money-bill-wave-alt menuIcons"></i> Event Expenses</a></li>
-          <li><a href="Ezcash Food Payment.html"><i class="fas fa-utensils menuIcons"></i>Ezcash Food Payment </a></li>
-          <li><a href = "report.html"><i class="fas fa-file-alt menuIcons"></i> Reports</a></li>
-          <li><a href = "calander.html"><i class="far fa-calendar-alt menuIcons"></i> Event Agenda</a></li>
+            <li><a href="dashboard.html"><i class="fas fa-home menuIcons"></i> Dashboard</a></li>
+            <li><a href="eventTable.html"><i class="fas fa-calendar-week menuIcons"></i> Events</a></li>
+            <li><a href="admin.html"><i class="fas fa-user-tie menuIcons"></i> Admin</a></li>
+            <li><a href="organizer.html"><i class="fas fa-users-cog menuIcons"></i> Organizers</a></li>
+            <li><a href="member.html"><i class="fas fa-users menuIcons"></i> Members</a></li>
+            <li><a href="eventExpenses.html"><i class="fas fa-money-bill-wave-alt menuIcons"></i> Event Expenses</a></li>
+            <li><a href="EzcashFoodPayment.html"><i class="fas fa-utensils menuIcons"></i>Ezcash Food Payment </a></li>
+            <li><a href="report.html"><i class="fas fa-file-alt menuIcons"></i> Reports</a></li>
+            <li><a href="calander.html"><i class="far fa-calendar-alt menuIcons"></i> Event Agenda</a></li>
         </ul>
-      </div>
-      <div id="actions">
-       <header id="header">
-        <nav><i class="fas fa-search" id="searchIcon"></i></nav>
-        <input type="text" name="search" id="search">
-        <button id="logOut">
+    </div>
+    <div id="actions">
+        <header id="header">
+            <nav><i class="fas fa-search" id="searchIcon"></i></nav>
+            <input type="text" name="search" id="search">
+            <button id="logOut" onclick="signOutUser()">
           Sign Out
         </button>
-      </header>
-        <nav><h1 id="title"><center>Add an event</center></h1></nav>
-          <form class="addEvent" action="index.html" method="post">
-          <h4>Title</h4><input type="text" name="title" class="inputs"><br>
-          <h4>Date</h4><input type="date" name="date" class="inputs"><br>
-          <h4>Start Time</h4><input type="time" name="startTime" class="inputs"><br>
-          <h4>End Time</h4><input type="time" name="endTime" class="inputs"><br>
-          <h4>Descritption</h4><textarea name="description" rows="8" cols="80" class="inputs"></textarea><br>
-          <h4>Location</h4><input type="text" name="location" class="inputs"><br>
-          <h4>Organizer</h4>
-          <select class="organizers" name="organizers" class="list">
+        </header>
+        <nav>
+            <h1 id="title">
+                <center>Add an event</center>
+            </h1>
+        </nav>
+        <form class="addEvent" action="index.html" method="post">
+            <h4>Title</h4><input type="text" name="title" class="inputs"><br>
+            <h4>Date</h4><input type="date" name="date" class="inputs"><br>
+            <h4>Start Time</h4><input type="time" name="startTime" class="inputs"><br>
+            <h4>End Time</h4><input type="time" name="endTime" class="inputs"><br>
+            <h4>Descritption</h4><textarea name="description" rows="8" cols="80" class="inputs"></textarea><br>
+            <h4>Location</h4><input type="text" name="location" class="inputs"><br>
+            <h4>Organizer</h4>
+            <select class="organizers" name="organizers" class="list">
             <option value="1">Bandara A.B.C.N</option>
             <option value="2">Jayawardana N.S</option>
           </select>
-          <button type="button" name="addOrganizer" class="addOrganizer">Add New Organizer</button><br>
-          <h4>Add Members</h4>
-          <select class="members" name="members" class="list">
+            <button type="button" name="addOrganizer" class="addOrganizer">Add New Organizer</button><br>
+            <h4>Add Members</h4>
+            <select class="members" name="members" class="list">
             <option value="1">Shan</option>
             <option value="2">Lahiru</option>
           </select>
-          <br>
-          <input type="submit" name="create" value="Create" class="submit">
-          <button type="button" name="button" class="button">Cancel</button>
+            <br>
+            <input type="submit" name="create" value="Create" class="submit">
+            <button type="button" name="button" class="button">Cancel</button>
         </form>
-      </div>
+    </div>
     </section>
-  </body>
+</body>
+
 </html>

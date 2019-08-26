@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes" />
+    <link rel="stylesheet" href="../css/Login.css">
+    <link rel="stylesheet" href="../css/BackgroundVideo.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.4.0/firebase-app.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/6.4.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.4.0/firebase-database.js"></script>
+
+    <script type="text/javascript" src="../js/common.js"></script>
+    <script type="text/javascript">
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyBOI0UdMeBBKVZtw4VsSrn0iGiK8RdLRG0",
+            authDomain: "dialog-internal-event-manager.firebaseapp.com",
+            databaseURL: "https://dialog-internal-event-manager.firebaseio.com",
+            projectId: "dialog-internal-event-manager",
+            storageBucket: "dialog-internal-event-manager.appspot.com",
+            messagingSenderId: "168700423082",
+            appId: "1:168700423082:web:6ad2292be26320c9"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        console.log("after firebase init");
+
+        isUserLoggedInAtStart();
+    </script>
+
+</head>
+
+<body>
+    <!-- background video -->
+    <video autoplay muted loop id="myVideo">
+  <source src="../Videos/Dialog.mp4" type="video/mp4">
+</video>
+
+    <div id="id01" class="modal">
+
+        <form id="login-form" class="modal-content animate" method="POST" action="javascript:loginUser()">
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <img src="../images/avatar.png" alt="Avatar" class="avatar">
+            </div>
+
+            <div class="container">
+                <label for="uname"><b>Email</b></label>
+                <input id="login_email" type="email" placeholder="Enter email" name="uname" required onclick="document.getElementById('warning_div').style.display = 'none';document.getElementById('warning_div').innerHTML = '';">
+
+                <label for="psw"><b>Password</b></label>
+                <input id="login_password" type="password" placeholder="Enter Password" name="psw" required onclick="document.getElementById('warning_div').style.display = 'none';document.getElementById('warning_div').innerHTML = '';">
+                <label class="alert alert-danger" role="alert" id="warning_div" style=" display: none;"></label>
+                <button id="login_submit" type="submit">Login</button>
+                <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+            </div>
+
+            <div class="container" style="background-color:#f1f1f1">
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+            </div>
+        </form>
+        <script>
+        </script>
+    </div>
+
+    <script type="text/javascript">
+        // Get the modal 
+        var modal = document.getElementById('id01');
+
+        //When the user clicks anywhere outside of the modal, close it 
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+    <div class="content">
+        <h1 style="font-size: 50px;"> DIALOG INTERNAL EVENT MANAGER</h1>
+        <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;font-size: larger;">Login</button>
+    </div>
+
+    <script type="text/javascript">
+        //Login the User
+        function loginUser() {
+            console.log("Inside Login method");
+            var email = document.getElementById('login_email').value;
+            var password = document.getElementById('login_password').value;
+            firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+                // Handle Errors here.
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                console.log("Inside Login error");
+                console.log("Error Occured! " + errorCode + " " + errorMessage);
+                if (errorCode == "auth/wrong-password") {
+                    document.getElementById('warning_div').style.display = 'block';
+                    document.getElementById('warning_div').innerHTML = "Incorrect Password!!. Please re-enter";
+                    document.getElementById('login_password').value = "";
+                }
+                if (errorCode == "auth/user-not-found") {
+                    document.getElementById('warning_div').style.display = 'block';
+                    document.getElementById('warning_div').innerHTML = "Incorrect Email!!. Please re-enter";
+                    document.getElementById('login_password').value = "";
+                    document.getElementById('login_email').value = "";
+                }
+            });
+
+            isUserLoggedInAtStart();
+
+        }
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            //Preloader
+            $(window).on("load", function() {
+                var preloaderFadeOutTime = 1000;
+
+                function hidePreloader() {
+                    var preloader = $('.spinner-wrapper');
+                    preloader.fadeOut(preloaderFadeOutTime);
+                }
+                hidePreloader();
+
+            });
+
+            //Preloader on submit
+            $("#login-form").on("submit", function() {
+                var preloaderFadeOutTime2 = 3000;
+
+                function hidePreloader2() {
+                    var preloader2 = $('.spinner-wrapper');
+                    preloader2.fadeIn();
+                    preloader2.fadeOut(preloaderFadeOutTime2);
+                }
+                hidePreloader2();
+            });
+        });
+    </script>
+</body>
+<!--CSS Spinner-->
+<div class="spinner-wrapper">
+    <div class="spinner"></div>
+</div>
+
+</html>
